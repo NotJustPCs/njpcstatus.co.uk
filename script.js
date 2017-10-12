@@ -51,7 +51,7 @@ $(document).ready(function() {
 		}, 'operational');
 
 		if (!$('#panel').data('incident')) {
-			$('#panel').attr('class', (status === 'operational' ? 'panel-success' : 'panel-warn') );
+			$('#panel').attr('class', (status === 'operational' ? 'alert-success' : 'alert-warning') );
 			$('#paneltitle').html(status === 'operational' ? 'All systems are operational.' : 'One or more systems inoperative');
 		}
 		data.monitors.forEach(function(item) {
@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 			if (issue.state === 'open') {
 				$('#panel').data('incident', 'true');
-				$('#panel').attr('class', (status === 'operational' ? 'panel-success' : 'panel-warn') );
+				$('#panel').attr('class', (status === 'operational' ? 'alert-success' : 'alert-warning') );
 				$('#paneltitle').html('<a href="#incidents">' + issue.title + '</a>');
 			}
 
