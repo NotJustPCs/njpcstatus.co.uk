@@ -9,8 +9,8 @@ $(document).ready(function() {
 			logs: 1
 		},
 		github: {
-			org: 'flybaseio',
-			repo: 'status'
+			org: 'njpc',
+			repo: 'njpcstatus'
 		}
 	};
 	var status_text = {
