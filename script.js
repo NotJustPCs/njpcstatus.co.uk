@@ -9,7 +9,7 @@ $(document).ready(function() {
 			logs: 1
 		},
 		github: {
-			org: 'njpc',
+			org: 'NotJustPCs',
 			repo: 'status.notjustpcs.co.uk'
 		}
 	};
