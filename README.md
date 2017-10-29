@@ -4,7 +4,7 @@ This is a simple status page to show an overview of your sites.
 
 We wanted to make a simple status page that queries the uptime robot API to get a status of each page and also display any issues.
 
-Based on the awesome [statuspage](https://github.com/pyupio/statuspage) by @pyupio, but simplified.
+Based on https://github.com/flybaseio/status which is based on the awesome [statuspage](https://github.com/pyupio/statuspage) by @pyupio, but simplified.
 
 ## Features
 
