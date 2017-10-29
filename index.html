@@ -65,8 +65,11 @@
 		<div class="col-sm-4">
 			<h4 class="page-header">Test Results</h4>
 			<div class="list-group" id="tests">
-				<li class="list-group-item"><i class="fa fa-wifi"></i> Your IP address is : <strong><script type="text/javascript">document.write(userip);</script></strong></li>
-				<li class="list-group-item"><i class="fa fa-server"></i> Your user agent string is: <strong><script type="text/javascript">document.write(navigator.userAgent);</script></strong></li>
+				<li class="list-group-item"><i class="fa fa-wifi"></i> IP address : <strong><script type="text/javascript">document.write(userip);</script></strong> (<div id="ip"></div>)</li>
+				<li class="list-group-item"><i class="fa fa-download"></i> Download speed: <div id="download"></div></li>
+				<li class="list-group-item"><i class="fa fa-upload"></i> Upload speed: <div id="upload"></div></li>
+				<li class="list-group-item"><i class="fa fa-clock-o"></i> Latency: <div id="ping"></div></li>
+				<li class="list-group-item"><i class="fa fa-server"></i> User agent string: <strong><script type="text/javascript">document.write(navigator.userAgent);</script></strong></li>
 			</div>
 		</div>
 		<div class="col-sm-4">
@@ -84,5 +87,17 @@
 <!-- scripts -->
 	<script src="//code.jquery.com/jquery.min.js"></script>
 	<script src="script.js?v=20170223"></script>
+	<script type="text/javascript">
+		var w = new Worker('speedtest_worker.min.js') // create new worker
+		setInterval(function () { w.postMessage('status') }, 100) // ask for status every 100ms
+		w.onmessage = function (event) { // when status is received, split the string and put the values in the appropriate fields
+		    var data = event.data.split(';') // string format: status;download;upload;ping (speeds are in mbit/s) (status: 0=not started, 1=downloading, 2=uploading, 3=ping, 4=done, 5=aborted)
+		    document.getElementById('download').textContent = data[1] + ' Mbit/s'
+		    document.getElementById('upload').textContent = data[2] + ' Mbit/s'
+		    document.getElementById('ping').textContent = data[3] + ' ms, ' + data[5] + ' ms jitter'
+		    document.getElementById('ip').textContent = data[4]
+		}
+		w.postMessage('start') // start the speedtest (default params. keep garbage.php and empty.dat in the same directory as the js file)
+	</script>
 </body>
 </html>
