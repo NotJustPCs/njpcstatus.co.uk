@@ -10,7 +10,7 @@ $(document).ready(function() {
 		},
 		github: {
 			org: 'njpc',
-			repo: 'njpcstatus'
+			repo: 'status.notjustpcs.co.uk'
 		}
 	};
 	var status_text = {
