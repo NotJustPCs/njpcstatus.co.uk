@@ -140,3 +140,47 @@ $(document).ready(function() {
 		};
 	};
 });
+
+function servertest(cssid,htmlstr,colour) {
+	document.getElementById(cssid).innerHTML = htmlstr;
+	document.getElementById(cssid).style.color = colour;
+}
+
+function st_IPload() {servertest("st_IP","<i class='fa fa-check'></i> Your computer can access the webserver via IP address.","green");}
+function st_IPerr() {servertest("st_IP","<i class='fa fa-times'></i> Your computer cannot access the webserver via IP address.","red");}
+function st_HTTPload() {servertest("st_HTTP","<i class='fa fa-check'></i> Your computer can access the webserver via hostname (HTTP).","green");}
+function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> Your computer cannot access the webserver via hostname (HTTP).","red");}
+function st_HTTPSload() {servertest("st_HTTPS","<i class='fa fa-check'></i> Your computer can access the webserver via hostname (HTTPS).","green");}
+function st_HTTPSerr() {servertest("st_HTTPS","<i class='fa fa-times'></i> Your computer cannot access the webserver via hostname (HTTPS).","red");}
+
+function MeasureConnectionSpeed() {
+	var startTime, endTime;
+	var download = new Image();
+	download.onload = function () {
+		endTime = (new Date()).getTime();
+		showResults();
+	}
+	
+	download.onerror = function (err, msg) {
+		ShowProgressMessage("<i class='fa fa-times'></i> Image not found or corrupt.");
+	}
+	
+	startTime = (new Date()).getTime();
+	var cacheBuster = "?nnn=" + startTime;
+	download.src = imageAddr + cacheBuster;
+	
+	function showResults() {
+		var duration = (endTime - startTime) / 1000;
+		var bitsLoaded = downloadSize * 8;
+		var speedBps = (bitsLoaded / duration).toFixed(2);
+		var speedKbps = (speedBps / 1024).toFixed(2);
+		var speedMbps = (speedKbps / 1024).toFixed(2);
+		ShowProgressMessage([
+			//"Your connection speed is:", 
+			//speedBps + " bps", 
+			//speedKbps + " kbps", 
+			//speedMbps + " Mbps"
+			"<i class='fa fa-cloud-download'></i> <a id='st_m_DLS'>Your connection speed is currently: " + speedMbps + " Mbps</a>"
+		]);
+	}
+}
