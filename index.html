@@ -44,6 +44,9 @@
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		  ga('create', 'UA-71838813-2', 'auto');
 		  ga('send', 'pageview');
+		
+		  var imageAddr = "https://notjustpcs.co.uk/scripts/31120037-5mb.jpg"; 
+		  var downloadSize = 4995374; //bytes
 	</script>
 </head>
 <body>
@@ -65,10 +68,12 @@
 		<div class="col-md-6">
 			<h4 class="page-header">Test Results</h4>
 			<div class="list-group" id="tests">
-				<li class="list-group-item"><i class="fa fa-wifi"></i> IP address : <br><strong><script type="text/javascript">document.write(userip);</script></strong></li>
-				<li class="list-group-item"><i class="fa fa-download"></i> Download speed: <div id="download"></div></li>
-				<li class="list-group-item"><i class="fa fa-upload"></i> Upload speed: <div id="upload"></div></li>
-				<li class="list-group-item"><i class="fa fa-server"></i> User agent string: <br><strong><script type="text/javascript">document.write(navigator.userAgent);</script></strong></li>
+				<li class="list-group-item"><i class="fa fa-wifi"></i> IP address: <strong><script type="text/javascript">document.write(userip);</script></strong></li>
+				<li class="list-group-item"><i class="fa fa-download"></i> Server connection (IP): <div id="st_IP"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</div></li>
+				<li class="list-group-item"><i class="fa fa-download"></i> Server connection (HTTP): <div id="st_HTTP"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</div></li>
+				<li class="list-group-item"><i class="fa fa-download"></i> Server connection (HTTPS): <div id="st_HTTPS"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</div></li>
+				<li class="list-group-item"><i class="fa fa-download"></i> Download speed: <div id="st_DLSpeed"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</div></li>
+				<li class="list-group-item"><i class="fa fa-server"></i> User agent string: <strong><script type="text/javascript">document.write(navigator.userAgent);</script></strong></li>
 			</div>
 		</div>
 	</div>
@@ -98,10 +103,25 @@
 			</div>
 		</div>
 	</div>
+	<img src="http://89.145.100.106/~njpcmaster/scripts/blank.jpg" onload="st_IPload()" onerror="st_IPerr()" style="width:0;height:0;visiblity:hidden;position:absolute;">
+	<img src="http://notjustpcs.co.uk/scripts/blank.jpg" onload="st_HTTPload()" onerror="st_HTTPerr()" style="width:0;height:0;visiblity:hidden;position:absolute;">
+	<img src="https://notjustpcs.co.uk/scripts/blank.jpg" onload="st_HTTPSload()" onerror="st_HTTPSerr()" style="width:0;height:0;visiblity:hidden;position:absolute;">
 	<!-- scripts -->
+	<script type="text/javascript">
+		function InitiateSpeedDetection() {
+		ShowProgressMessage("<i class='fa fa-spinner fa-spin'></i> Running tests, please wait...");
+		window.setTimeout(MeasureConnectionSpeed, 1);
+		};    
+
+		if (window.addEventListener) {
+			window.addEventListener('load', InitiateSpeedDetection, false);
+		} else if (window.attachEvent) {
+			window.attachEvent('onload', InitiateSpeedDetection);
+		}
+	</script>
 	<script src="//code.jquery.com/jquery.min.js"></script>
 	<script src="script.js?v=20170223"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		var w = new Worker('speedtest_worker.min.js') // create new worker
 		setInterval(function () { w.postMessage('status') }, 100) // ask for status every 100ms
 		w.onmessage = function (event) { // when status is received, split the string and put the values in the appropriate fields
@@ -112,6 +132,6 @@
 		    //document.getElementById('ip').textContent = data[4]
 		}
 		w.postMessage('start') // start the speedtest (default params. keep garbage.php and empty.dat in the same directory as the js file)
-	</script>
+	</script> -->
 </body>
 </html>
