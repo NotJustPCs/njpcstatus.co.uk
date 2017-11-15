@@ -198,7 +198,7 @@ function MeasureConnectionSpeed() {
 			//speedBps + " bps", 
 			//speedKbps + " kbps", 
 			//speedMbps + " Mbps"
-			"<i class='fa fa-cloud-download'></i> <a id='st_m_DLS'>Your connection speed is currently: " + speedMbps + " Mbps</a>"
+			speedMbps + " Mbps"
 		]);
 	}
 }
