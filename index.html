@@ -107,6 +107,8 @@
 	<img src="http://notjustpcs.co.uk/scripts/blank.jpg" onload="st_HTTPload()" onerror="st_HTTPerr()" style="width:0;height:0;visiblity:hidden;position:absolute;">
 	<img src="https://notjustpcs.co.uk/scripts/blank.jpg" onload="st_HTTPSload()" onerror="st_HTTPSerr()" style="width:0;height:0;visiblity:hidden;position:absolute;">
 	<!-- scripts -->
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="script.js?v=20171115"></script>
 	<script type="text/javascript">
 		function InitiateSpeedDetection() {
 		ShowProgressMessage("<i class='fa fa-spinner fa-spin'></i> Running tests, please wait...");
@@ -119,8 +121,6 @@
 			window.attachEvent('onload', InitiateSpeedDetection);
 		}
 	</script>
-	<script src="//code.jquery.com/jquery.min.js"></script>
-	<script src="script.js?v=20170223"></script>
 	<!-- <script type="text/javascript">
 		var w = new Worker('speedtest_worker.min.js') // create new worker
 		setInterval(function () { w.postMessage('status') }, 100) // ask for status every 100ms
