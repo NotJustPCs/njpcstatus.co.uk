@@ -193,12 +193,11 @@ function MeasureConnectionSpeed() {
 		var speedBps = (bitsLoaded / duration).toFixed(2);
 		var speedKbps = (speedBps / 1024).toFixed(2);
 		var speedMbps = (speedKbps / 1024).toFixed(2);
-		ShowProgressMessage([
+		ShowProgressMessage([speedMbps + " Mbps"
 			//"Your connection speed is:", 
 			//speedBps + " bps", 
 			//speedKbps + " kbps", 
 			//speedMbps + " Mbps"
-			speedMbps + " Mbps"
 		]);
 	}
 }
