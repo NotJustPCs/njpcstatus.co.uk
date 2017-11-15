@@ -146,12 +146,12 @@ function servertest(cssid,htmlstr,colour) {
 	document.getElementById(cssid).style.color = colour;
 }
 
-function st_IPload() {servertest("st_IP","<i class='fa fa-check'></i> Your computer can access the webserver via IP address.","green");}
-function st_IPerr() {servertest("st_IP","<i class='fa fa-times'></i> Your computer cannot access the webserver via IP address.","red");}
-function st_HTTPload() {servertest("st_HTTP","<i class='fa fa-check'></i> Your computer can access the webserver via hostname (HTTP).","green");}
-function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> Your computer cannot access the webserver via hostname (HTTP).","red");}
-function st_HTTPSload() {servertest("st_HTTPS","<i class='fa fa-check'></i> Your computer can access the webserver via hostname (HTTPS).","green");}
-function st_HTTPSerr() {servertest("st_HTTPS","<i class='fa fa-times'></i> Your computer cannot access the webserver via hostname (HTTPS).","red");}
+function st_IPload() {servertest("st_IP","<i class='fa fa-check'></i> IP test Passed.","green");}
+function st_IPerr() {servertest("st_IP","<i class='fa fa-times'></i> IP test Failed.","red");}
+function st_HTTPload() {servertest("st_HTTP","<i class='fa fa-check'></i> HTTP test Passed.","green");}
+function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> HTTP test Failed.","red");}
+function st_HTTPSload() {servertest("st_HTTPS","<i class='fa fa-check'></i> HTTPS test Passed.","green");}
+function st_HTTPSerr() {servertest("st_HTTPS","<i class='fa fa-times'></i> HTTPS test Failed.","red");}
 
 function ShowProgressMessage(msg) {
 	if (console) {
