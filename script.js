@@ -153,6 +153,24 @@ function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> Your co
 function st_HTTPSload() {servertest("st_HTTPS","<i class='fa fa-check'></i> Your computer can access the webserver via hostname (HTTPS).","green");}
 function st_HTTPSerr() {servertest("st_HTTPS","<i class='fa fa-times'></i> Your computer cannot access the webserver via hostname (HTTPS).","red");}
 
+function ShowProgressMessage(msg) {
+	if (console) {
+		if (typeof msg == "string") {
+			console.log(msg);
+		} else {
+			for (var i = 0; i < msg.length; i++) {
+				console.log(msg[i]);
+			}
+		}
+	}
+	
+	var oProgress = document.getElementById("st_DLSpeed");
+	if (oProgress) {
+		var actualHTML = (typeof msg == "string") ? msg : msg.join("<br />");
+		oProgress.innerHTML = actualHTML;
+	}
+}
+
 function MeasureConnectionSpeed() {
 	var startTime, endTime;
 	var download = new Image();
