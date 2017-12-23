@@ -319,8 +319,7 @@ style.css:13
 }
 .navigation .img {
     position: relative;
-    top: .3rem;
-    height: 2rem;
+    height: 4.5rem;
 }
 .navigation .title, .navigation-title {
     color: #606c76;
@@ -330,6 +329,9 @@ style.css:13
     padding: 0;
     position: relative;
     text-decoration: none;
+}
+.navigation h1::after {
+        content: " - ";
 }
 
 /* Sticky footer styles
