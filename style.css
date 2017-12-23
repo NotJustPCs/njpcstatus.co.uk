@@ -317,6 +317,15 @@ style.css:13
     display: block;
     width: 100%;
 }
+.navigation .title, .navigation-title {
+    color: #606c76;
+    display: inline;
+    line-height: 5.2rem;
+    font-size: 1.6rem;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
