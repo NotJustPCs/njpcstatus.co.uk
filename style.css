@@ -334,6 +334,10 @@ style.css:13
         content: " - ";
 }
 
+#main {
+    padding-top: 8.5rem;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
