@@ -317,6 +317,11 @@ style.css:13
     display: block;
     width: 100%;
 }
+.navigation .img {
+    position: relative;
+    top: .3rem;
+    height: 2rem;
+}
 .navigation .title, .navigation-title {
     color: #606c76;
     display: inline;
