@@ -357,6 +357,10 @@ body {
   background-color: #f4f5f6;
 }
 
+#refreshing {
+  padding-left:5em;
+}
+
 
 /* Inline header
 -------------------------------------------------- 
