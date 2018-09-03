@@ -2,11 +2,6 @@ document.getElementById('timer').innerHTML =
   05 + ":" + 00;
 startTimer();
 
-function LoadGeoIPVars(JSONdata) {
-	var obj = JSON.parse(JSONdata);
-	var userip = obj.ip;
-}
-
 function startTimer() {
   var presentTime = document.getElementById('timer').innerHTML;
   var timeArray = presentTime.split(/[:]+/);
@@ -24,21 +19,6 @@ function checkSecond(sec) {
   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
   if (sec < 0) {sec = "59"};
   return sec;
-}
-
-function getJSONP(url, success) {
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] 
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
 }
 
 $(document).ready(function() {
