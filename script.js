@@ -2,6 +2,11 @@ document.getElementById('timer').innerHTML =
   05 + ":" + 00;
 startTimer();
 
+function LoadGeoIPVars(JSONdata) {
+	var obj = JSON.parse(JSONdata);
+	userip = obj.ip;
+}
+
 function startTimer() {
   var presentTime = document.getElementById('timer').innerHTML;
   var timeArray = presentTime.split(/[:]+/);
@@ -178,3 +183,5 @@ $(document).ready(function() {
 		};
 	};
 });
+
+getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars);
