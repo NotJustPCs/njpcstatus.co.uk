@@ -163,5 +163,3 @@ $(document).ready(function() {
 		};
 	};
 });
-
-getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars);
