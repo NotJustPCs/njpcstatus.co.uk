@@ -67,6 +67,7 @@ function LoadGeoIPVars(JSONdata) {
 }
 
 function getJSONP(url, success) {
+    console.log(url);
     var ud = '_' + +new Date,
         script = document.createElement('script'),
         head = document.getElementsByTagName('head')[0] 
