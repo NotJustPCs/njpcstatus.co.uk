@@ -77,6 +77,7 @@ function getJSONP(url, success) {
     window[ud] = function(data) {
         head.removeChild(script);
         success && success(data);
+	console.log(data);
     };
 
     script.src = url.replace('callback=?', 'callback=' + ud);
