@@ -62,6 +62,8 @@ function MeasureConnectionSpeed() {
 function LoadGeoIPVars(JSONdata) {
 	var obj = JSON.parse(JSONdata);
 	var userip = obj.ip;
+	console.log(obj.ip);
+	console.log(userip);
 }
 
 function getJSONP(url, success) {
