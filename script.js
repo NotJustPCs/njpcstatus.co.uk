@@ -4,7 +4,7 @@ startTimer();
 
 function LoadGeoIPVars(JSONdata) {
 	var obj = JSON.parse(JSONdata);
-	userip = obj.ip;
+	var userip = obj.ip;
 }
 
 function startTimer() {
