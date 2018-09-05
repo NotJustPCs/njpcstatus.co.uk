@@ -63,7 +63,9 @@ function LoadGeoIPVars(JSONdata) {
 	var myJSON = JSON.stringify(JSONdata);
 	var obj = JSON.parse(myJSON);
 	document.getElementById('st_uIP').innerHTML = obj.ip;
-	console.log(obj.ip);
+	document.getElementById('st_uISP').innerHTML = obj.isp;
+	document.getElementById('st_uOrg').innerHTML = obj.org;
+//	console.log(obj.ip);
 }
 
 function getJSONP(url, success) {
@@ -80,6 +82,6 @@ function getJSONP(url, success) {
     head.appendChild(script);
 }
 getJSONP('https://json.geoiplookup.io/&callback=?', function(data){
-    console.log(data);
+//    console.log(data);
     LoadGeoIPVars(data);
 });
