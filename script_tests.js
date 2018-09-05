@@ -73,16 +73,17 @@ function getJSONP(url, success) {
         script = document.createElement('script'),
         head = document.getElementsByTagName('head')[0] 
                || document.documentElement;
-
+    console.log('Stage2');
     window[ud] = function(data) {
         head.removeChild(script);
         success && success(data);
 	console.log(data);
     };
-
+    console.log('Stage3');
+	
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
+    console.log('Stage4');
 }
-console.log('Should be next...');
 getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars);
 //$.getJSON( 'https://api.ipify.org/?format=json' ).done(message)
