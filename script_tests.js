@@ -83,6 +83,9 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://api.ipify.org/?format=json&callback=?', function(data){
+getJSONP('http://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?', function(data){
     console.log(data);
 }); 
+
+//http://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?
+//https://api.ipify.org/?format=json&callback=?
