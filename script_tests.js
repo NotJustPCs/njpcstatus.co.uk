@@ -81,7 +81,7 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://api.ipify.org/?format=json&callback=?', function(data){
+getJSONP('https://json.geoiplookup.io/&callback=?', function(data){
     console.log(data);
     LoadGeoIPVars(data);
 });
