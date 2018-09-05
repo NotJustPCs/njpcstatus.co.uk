@@ -83,5 +83,6 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
+console.log('Should be next...');
 getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars);
 //$.getJSON( 'https://api.ipify.org/?format=json' ).done(message)
