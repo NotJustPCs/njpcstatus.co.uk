@@ -81,8 +81,9 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?', LoadGeoIPVars(data){
+getJSONP('https://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?', function(data){
     console.log(data);
+    LoadGeoIPVars(data);
 }); 
 
 //http://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?
