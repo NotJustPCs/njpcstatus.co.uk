@@ -86,4 +86,4 @@ function getJSONP(url, success) {
     console.log('Stage4');
 }
 //getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars);
-$.getJSON( 'https://api.ipify.org/?format=json' ).done(LoadGeoIPVars);
+getJSON( 'https://api.ipify.org/?format=json' ).done(LoadGeoIPVars);
