@@ -74,16 +74,14 @@ function getJSONP(url, success) {
         head = document.getElementsByTagName('head')[0] 
                || document.documentElement;
     window[ud] = function(data) {
-	console.log('Success1');
         head.removeChild(script);
         success && success(data);
-	console.log('Success2');
     };
 
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?', function(data){
+getJSONP('https://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?', LoadGeoIPVars(data){
     console.log(data);
 }); 
 
