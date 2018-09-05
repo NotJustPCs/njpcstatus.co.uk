@@ -64,7 +64,7 @@ function LoadGeoIPVars(JSONdata) {
 	var obj = JSON.parse(JSONdata);
 	var userip = obj.ip;
 	document.getElementById('st_uIP').innerHTML = obj.ip;
-	console.log(obj.type);
+	console.log(obj.ip);
 	console.log(userip);
 }
 
