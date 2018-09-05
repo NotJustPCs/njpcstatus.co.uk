@@ -74,12 +74,13 @@ function getJSONP(url, success) {
         head = document.getElementsByTagName('head')[0] 
                || document.documentElement;
     window[ud] = function(data) {
+	console.log('Success1');
         head.removeChild(script);
         success && success(data);
-	    console.log('Success');
+	console.log('Success2');
     };
-	
+
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars(data));
+getJSONP('https://api.ipify.org/?format=json', LoadGeoIPVars());
