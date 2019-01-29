@@ -62,7 +62,7 @@ function MeasureConnectionSpeed() {
 function LoadGeoIPVars(JSONdata) {
 	var myJSON = JSON.stringify(JSONdata);
 	var obj = JSON.parse(myJSON);
-	document.getElementById('st_uIP').innerHTML = obj.ip;
+	document.getElementById('st_uIP').innerHTML = obj.query;
 	document.getElementById('st_uISP').innerHTML = obj.isp;
 	document.getElementById('st_uOrg').innerHTML = obj.org;
 //	console.log(obj.ip);
@@ -81,7 +81,7 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://json.geoiplookup.io/&callback=?', function(data){
+getJSONP('http://ip-api.com/json/', function(data){
 //    console.log(data);
     LoadGeoIPVars(data);
 });
