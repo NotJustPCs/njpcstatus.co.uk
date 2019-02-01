@@ -62,8 +62,8 @@ function MeasureConnectionSpeed() {
 function LoadGeoIPVars(JSONdata) {
 	var myJSON = JSON.stringify(JSONdata);
 	var obj = JSON.parse(myJSON);
-	document.getElementById('st_uIP').innerHTML = obj.query;
-	document.getElementById('st_uISP').innerHTML = obj.isp;
+	document.getElementById('st_uIP').innerHTML = obj.ip;
+	document.getElementById('st_uISP').innerHTML = obj.asn;
 	document.getElementById('st_uOrg').innerHTML = obj.org;
 //	console.log(obj.ip);
 }
