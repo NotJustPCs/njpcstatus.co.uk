@@ -65,7 +65,7 @@ function LoadGeoIPVars(JSONdata) {
 	document.getElementById('st_uIP').innerHTML = obj.ip;
 	document.getElementById('st_uISP').innerHTML = obj.organization;
 	document.getElementById('st_uOrg').innerHTML = obj.organization_name;
-//	console.log(obj.ip);
+	console.log(obj.ip);
 }
 
 function getJSONP(url, success) {
