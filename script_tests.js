@@ -81,7 +81,7 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://get.geojs.io/v1/ip/geo.json', function(data){
+getJSONP('https://get.geojs.io/v1/ip/geo.js', function(data){
     console.log(data);
     LoadGeoIPVars(data);
 });
