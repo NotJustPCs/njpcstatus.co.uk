@@ -63,8 +63,8 @@ function LoadGeoIPVars(JSONdata) {
 	var myJSON = JSON.stringify(JSONdata);
 	var obj = JSON.parse(myJSON);
 	document.getElementById('st_uIP').innerHTML = obj.ip;
-	document.getElementById('st_uISP').innerHTML = obj.asn;
-	document.getElementById('st_uOrg').innerHTML = obj.org;
+	document.getElementById('st_uISP').innerHTML = obj.organization;
+	document.getElementById('st_uOrg').innerHTML = obj.organization_name;
 //	console.log(obj.ip);
 }
 
@@ -82,6 +82,6 @@ function getJSONP(url, success) {
     head.appendChild(script);
 }
 getJSONP('https://get.geojs.io/v1/ip/geo.json', function(data){
-//    console.log(data);
+    console.log(data);
     LoadGeoIPVars(data);
 });
