@@ -81,7 +81,7 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('http://api.ipstack.com/check?access_key=5c8f143c6418c4f715263ccbc5d672db&format=1', function(data){
+getJSONP('https://ipapi.co/json', function(data){
 //    console.log(data);
     LoadGeoIPVars(data);
 });
