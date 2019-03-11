@@ -88,9 +88,11 @@ function getJSONP(url, success) {
 
 $.ajax({
     type: "GET",
-    url: "https://api.ip.sb/jsonip",
+    url: "https://api.ip.sb/geoip",
     dataType: "jsonp",
     success: function(json) {
         document.getElementById('st_uIP').innerHTML = json.ip;
+	document.getElementById('st_uISP').innerHTML = json.city;
+	document.getElementById('st_uOrg').innerHTML = json.organization;
     }
 });
