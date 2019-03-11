@@ -81,7 +81,7 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://api.myip.com/', function(data){
+getJSONP('https://api.ip.sb/jsonip', function(data){
     console.log(data);
     LoadGeoIPVars(data);
 });
