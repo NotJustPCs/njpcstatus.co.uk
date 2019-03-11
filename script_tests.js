@@ -63,15 +63,15 @@ function LoadGeoIPVars(JSONdata) {
 	var myJSON = JSON.stringify(JSONdata);
 	var obj = JSON.parse(myJSON);
 	document.getElementById('st_uIP').innerHTML = obj.ip;
-	document.getElementById('st_uISP').innerHTML = obj.organization;
-	document.getElementById('st_uOrg').innerHTML = obj.organization_name;
+//	document.getElementById('st_uISP').innerHTML = obj.organization;
+//	document.getElementById('st_uOrg').innerHTML = obj.organization_name;
 	console.log(obj.ip);
 }
 
 function getJSONP(url, success) {
     var ud = '_' + +new Date,
         script = document.createElement('script'),
-        head = document.getElementsByTagName('geoip')[0] 
+        head = document.getElementsByTagName('head')[0] 
                || document.documentElement;
     window[ud] = function(data) {
         head.removeChild(script);
@@ -81,7 +81,7 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://get.geojs.io/v1/ip/geo.js', function(data){
+getJSONP('https://api.ipify.org/?format=json', function(data){
     console.log(data);
     LoadGeoIPVars(data);
 });
