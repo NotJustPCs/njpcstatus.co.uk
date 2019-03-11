@@ -81,7 +81,16 @@ function getJSONP(url, success) {
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
-getJSONP('https://api.ip.sb/jsonip', function(data){
-    console.log(data);
-    LoadGeoIPVars(data);
+//getJSONP('https://api.ip.sb/jsonip', function(data){
+//    console.log(data);
+//    LoadGeoIPVars(data);
+//});
+
+$.ajax({
+    type: "GET",
+    url: "https://api.ip.sb/jsonip",
+    dataType: "jsonp",
+    success: function(json) {
+        document.getElementById('st_uIP').innerHTML = json.ip;
+    }
 });
