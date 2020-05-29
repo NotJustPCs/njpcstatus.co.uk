@@ -9,6 +9,8 @@ function st_HTTPload() {servertest("st_HTTP","<i class='fa fa-check'></i> HTTP t
 function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> HTTP test Failed.","red");}
 function st_HTTPSload() {servertest("st_HTTPS","<i class='fa fa-check'></i> HTTPS test Passed.","green");}
 function st_HTTPSerr() {servertest("st_HTTPS","<i class='fa fa-times'></i> HTTPS test Failed.","red");}
+function st_TVload() {servertest("st_TV","<i class='fa fa-check'></i> Remote support test Passed.","green");}
+function st_TVSerr() {servertest("st_TV","<i class='fa fa-times'></i> Remote support test Failed.","red");}
 
 function ShowProgressMessage(msg) {
 	if (console) {
@@ -20,7 +22,7 @@ function ShowProgressMessage(msg) {
 			}
 		}
 	}
-	
+
 	var oProgress = document.getElementById("st_DLSpeed");
 	if (oProgress) {
 		var actualHTML = (typeof msg == "string") ? msg : msg.join("<br />");
@@ -35,15 +37,15 @@ function MeasureConnectionSpeed() {
 		endTime = (new Date()).getTime();
 		showResults();
 	}
-	
+
 	download.onerror = function (err, msg) {
 		ShowProgressMessage("<i class='fa fa-times'></i> Image not found or corrupt.");
 	}
-	
+
 	startTime = (new Date()).getTime();
 	var cacheBuster = "?nnn=" + startTime;
 	download.src = imageAddr + cacheBuster;
-	
+
 	function showResults() {
 		var duration = (endTime - startTime) / 1000;
 		var bitsLoaded = downloadSize * 8;
@@ -51,9 +53,9 @@ function MeasureConnectionSpeed() {
 		var speedKbps = (speedBps / 1024).toFixed(2);
 		var speedMbps = (speedKbps / 1024).toFixed(2);
 		ShowProgressMessage([speedMbps + " Mbps"
-			//"Your connection speed is:", 
-			//speedBps + " bps", 
-			//speedKbps + " kbps", 
+			//"Your connection speed is:",
+			//speedBps + " bps",
+			//speedKbps + " kbps",
 			//speedMbps + " Mbps"
 		]);
 	}
@@ -71,7 +73,7 @@ function LoadGeoIPVars(JSONdata) {
 function getJSONP(url, success) {
     var ud = '_' + +new Date,
         script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] 
+        head = document.getElementsByTagName('head')[0]
                || document.documentElement;
     window[ud] = function(data) {
         head.removeChild(script);
