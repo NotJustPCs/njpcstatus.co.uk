@@ -3,10 +3,10 @@ function servertest(cssid,htmlstr,colour) {
 	document.getElementById(cssid).style.color = colour;
 }
 
-function st_IPload() {servertest("st_IP","<i class='fa fa-check'></i> IP test Passed.","green");}
-function st_IPerr() {servertest("st_IP","<i class='fa fa-times'></i> IP test Failed.","red");}
-function st_HTTPload() {servertest("st_HTTP","<i class='fa fa-check'></i> HTTP test Passed.","green");}
-function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> HTTP test Failed.","red");}
+//function st_IPload() {servertest("st_IP","<i class='fa fa-check'></i> IP test Passed.","green");}
+//function st_IPerr() {servertest("st_IP","<i class='fa fa-times'></i> IP test Failed.","red");}
+//function st_HTTPload() {servertest("st_HTTP","<i class='fa fa-check'></i> HTTP test Passed.","green");}
+//function st_HTTPerr() {servertest("st_HTTP","<i class='fa fa-times'></i> HTTP test Failed.","red");}
 function st_HTTPSload() {servertest("st_HTTPS","<i class='fa fa-check'></i> HTTPS test Passed.","green");}
 function st_HTTPSerr() {servertest("st_HTTPS","<i class='fa fa-times'></i> HTTPS test Failed.","red");}
 function st_TVload() {servertest("st_TV","<i class='fa fa-check'></i> Remote support test Passed.","green");}
