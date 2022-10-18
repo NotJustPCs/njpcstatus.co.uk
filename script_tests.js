@@ -61,6 +61,11 @@ function MeasureConnectionSpeed() {
 	}
 }
 
+function GetDimensions() {
+	var CurrDim = "Your screen size is " + window.screen.width + "x" + window.screen.height + ", of which " + window.screen.availWidth + "x" + window.screen.availHeight + " is available to use.<br />Your browser size is " + window.innerWidth + "x" + window.innerHeight + ".";
+	document.getElementById('st_uDimensions').innerHTML = CurrDim;
+}
+
 function LoadGeoIPVars(JSONdata) {
 	var myJSON = JSON.stringify(JSONdata);
 	var obj = JSON.parse(myJSON);
