@@ -98,8 +98,14 @@ $.ajax({
     url: "https://api-ipv4.ip.sb/geoip",
     dataType: "jsonp",
     success: function(json) {
-        document.getElementById('st_uIP').innerHTML = json.ip;
-	document.getElementById('st_uISP').innerHTML = json.city;
-	document.getElementById('st_uOrg').innerHTML = json.organization;
+		document.getElementById('st_uIP').innerHTML = json.ip;
+		document.getElementById('st_uISP').innerHTML = json.city;
+		document.getElementById('st_uOrg').innerHTML = json.organization;
+    }
+    type: "GET",
+    url: "https://api.ip.sb/geoip",
+    dataType: "jsonp",
+    success: function(json) {
+		document.getElementById('st_uIPv6').innerHTML = json.ip;
     }
 });
