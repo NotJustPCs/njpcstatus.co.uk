@@ -102,6 +102,8 @@ $.ajax({
 		document.getElementById('st_uISP').innerHTML = json.city;
 		document.getElementById('st_uOrg').innerHTML = json.organization;
     }
+});
+$.ajax({
     type: "GET",
     url: "https://api.ip.sb/geoip",
     dataType: "jsonp",
