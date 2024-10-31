@@ -1,15 +1,44 @@
-if (window.runningAdsAllowed === undefined) {
-    document.getElementById('st_AdBlock').innerHTML = 'Adblocker Detected';
-  }
-  else {
-	document.getElementById('st_AdBlock').innerHTML = 'No Adblocker has been Detected';
-  }
-
-
 GetDimensions();
 document.getElementById('timer').innerHTML =
   05 + ":" + 00;
 startTimer();
+
+async function detectAdBlockUsingFetch() {
+	let adBlockEnabled = false;
+  
+	const googleAdsURL =
+	  'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+  
+	try {
+	  await fetch(new Request(googleAdsURL)).catch(_ => {
+		adBlockEnabled = true;
+	  });
+	} catch (err) {
+	  adBlockEnabled = true;
+	} finally {
+	  console.log(`AdBlock enabled: ${adBlockEnabled}`);
+  
+	  if (adBlockEnabled) {
+		document.getElementById('st_AdBlock').innerHTML = 'Adblocker Detected';
+	}
+	else {
+		document.getElementById('st_AdBlock').innerHTML = 'No Adblocker has been Detected';
+	}
+	}
+  }
+  detectAdBlockUsingFetch();
+  
+ 
+  function detectAdBlockUsingGlobalVariable() {
+	if (window.runningAdsAllowed === undefined) {
+	  console.log('Detected Ad content Blocker');
+  
+	  const h2 = document.getElementById('adblock-message');
+  
+	  h2.innerHTML = 'Disable your ad block to support us';
+	}
+  }
+  
 
 function startTimer() {
   var presentTime = document.getElementById('timer').innerHTML;
