@@ -1,3 +1,11 @@
+if (window.runningAdsAllowed === undefined) {
+    document.getElementById('st_AdBlock').innerHTML = 'Adblocker Detected';
+  }
+  else {
+	document.getElementById('st_AdBlock').innerHTML = 'No Adblocker has been Detected';
+  }
+
+
 GetDimensions();
 document.getElementById('timer').innerHTML =
   05 + ":" + 00;

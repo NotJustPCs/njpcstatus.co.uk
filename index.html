@@ -90,6 +90,7 @@
 				<li class="list-group-item"><i class="fa fa-desktop"></i> Server connection (remote control server): <span id="st_TV"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</span></li>
 				<li class="list-group-item"><i class="fa fa-download"></i> Download speed: <span id="st_DLSpeed"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</span></li>
 				<li class="list-group-item"><i class="fa fa-server"></i> User agent string: <strong><script type="text/javascript">document.write(navigator.userAgent);</script></strong></li>
+				<li class="list-group-item"><i class="fa fa-ban"></i> <span id="st_AdBlock"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</span></li>
 				<li class="list-group-item"><i class="fa fa-arrows"></i> <span id="st_uDimensions"><i class='fa fa-spinner fa-spin'></i> Running tests, please wait...</span></li>
 				<li class="list-group-item"><a href="javascript:location.reload(true)"><i class="fa fa-refresh"></i> Rerun tests now</a></li>
 			</div>
@@ -124,7 +125,6 @@
 			<div class="list-group" id="contacts">
 				<a class="list-group-item" href="mailto:alert@njpcstatus.co.uk"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i>&nbsp; email us on <strong>alert@njpcstatus.co.uk</strong></a>
 				<a class="list-group-item" href="tel:+441273906969"><i class="fa fa-phone fa-fw" aria-hidden="true"></i>&nbsp; Call us on <strong>01273 906969</strong></a>
-				<a class="list-group-item" href="//twitter.com/notjustpcs" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i>&nbsp; Check our Twitter feed</a>
 				<a class="list-group-item" href="//get.teamviewer.com/notjustpcs" target="_blank"><i class="fa fa-desktop fa-fw" aria-hidden="true"></i>&nbsp; Start a remote support session</a>
 			</div>
 		</div>
@@ -140,8 +140,9 @@
 
 
 	<!-- scripts -->
+	<script src="ads-prebid-wp-banners.js"></script>
 	<script src="//code.jquery.com/jquery.min.js"></script>
-	<script crossorigin="anonymous" src="script.js?v=201809031733"></script>
+	<script crossorigin="anonymous" src="script.js?v=202410311034"></script>
 	<script type="text/javascript">
 		function InitiateSpeedDetection() {
 		ShowProgressMessage("<i class='fa fa-spinner fa-spin'></i> Running tests, please wait...");
